@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MOTO X Performance — Ride Beyond Limits</title>
+<meta name="description" content="MOTO X Performance — luxury sport motorcycles, racing gear and performance parts engineered for those who ride beyond limits." />
+
+<!-- Fontshare: Clash Display (display) + Satoshi (body) -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="loader">
+  <div class="loader-inner">
+    <span class="loader-brand">MOTO<em>X</em></span>
+    <div class="loader-track"><span id="loader-bar"></span></div>
+    <div class="loader-meta">
+      <span class="loader-label">Engineering the ride</span>
+      <span id="loader-percent">0</span>
+    </div>
+  </div>
+</div>
+
+<!-- grain + reflection overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <a class="brand" href="#top">MOTO<em>X</em><span class="brand-sub">Performance</span></a>
+  <nav class="nav">
+    <a href="#showcase">Showcase</a>
+    <a href="#gear">Gear</a>
+    <a href="#parts">Parts</a>
+    <a href="#bikes">Bikes</a>
+  </nav>
+  <a href="#cta" class="btn-magnetic header-cta"><span>Book a Test Ride</span></a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span></button>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#showcase">Showcase</a>
+  <a href="#gear">Gear</a>
+  <a href="#parts">Parts</a>
+  <a href="#bikes">Bikes</a>
+  <a href="#cta">Book a Test Ride</a>
+</div>
+
+<!-- ============ HERO CANVAS (fixed) ============ -->
+<div class="canvas-wrap" id="canvas-wrap">
+  <canvas id="hero-canvas"></canvas>
+  <div class="canvas-vignette" aria-hidden="true"></div>
+</div>
+
+<!-- motorcycle presentation captions over the scrubbing hero -->
+<div class="hero-captions" id="hero-captions" aria-hidden="true">
+  <figure class="hero-caption align-left" data-enter="0.16" data-leave="0.42">
+    <span class="caption-index">SX—01 / Flagship</span>
+    <h2 class="caption-name">Emerald<br>GT-R</h2>
+    <p class="caption-spec">998cc Inline-4 · 214 hp · 171 kg dry</p>
+  </figure>
+  <figure class="hero-caption align-right" data-enter="0.5" data-leave="0.78">
+    <span class="caption-index">SX—02 / Night Series</span>
+    <h2 class="caption-name">Nocturne<br>RS</h2>
+    <p class="caption-spec">1103cc V4 · 237 hp · 0—100 in 2.9s</p>
+  </figure>
+</div>
+
+<main id="top">
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <span class="section-label hero-label">001 / Performance Division</span>
+    <h1 class="hero-heading">
+      <span class="line">Ride</span>
+      <span class="line">Beyond</span>
+      <span class="line accent">Limits</span>
+    </h1>
+    <p class="hero-tagline">Hand-built emerald-series superbikes, race-grade gear and precision parts — for riders who refuse the ordinary.</p>
+    <a href="#showcase" class="btn-magnetic hero-cta"><span>Enter the Showroom</span><i class="arrow">→</i></a>
+  </div>
+</section>
+
+<!-- spacer that gives the pinned hero its scroll length -->
+<div class="hero-scroll-space" id="hero-scroll-space"></div>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee-wrap" id="marquee-1">
+  <div class="marquee-text">MOTO X <span>·</span> PERFORMANCE <span>·</span> RIDE BEYOND LIMITS <span>·</span> MOTO X <span>·</span> PERFORMANCE <span>·</span> RIDE BEYOND LIMITS <span>·</span></div>
+</div>
+
+<!-- ============ 2. SHOWCASE ============ -->
+<section class="section showcase" id="showcase" data-animation="fade-up">
+  <div class="section-head align-left">
+    <span class="section-label">002 / The Machines</span>
+    <h2 class="section-heading">Motorcycle<br>Showcase</h2>
+    <p class="section-body">Two flagship builds. One obsession with the perfect line. Every surface sculpted in our wind tunnel, every gram justified.</p>
+  </div>
+
+  <div class="showcase-grid">
+    <article class="show-card tilt" data-tilt>
+      <div class="show-card-media">
+        <img src="motorcycle1.png" alt="MOTO X emerald studio superbike" loading="lazy" />
+      </div>
+      <div class="show-card-body">
+        <span class="card-index">SX—01</span>
+        <h3>Emerald GT-R</h3>
+        <p>Track-bred geometry, road-legal soul. The bike that started the obsession.</p>
+        <ul class="spec-row">
+          <li><b>998</b><span>cc</span></li>
+          <li><b>214</b><span>hp</span></li>
+          <li><b>171</b><span>kg</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="show-card tilt" data-tilt>
+      <div class="show-card-media">
+        <img src="motorcycle2.png" alt="MOTO X rider in motion through the night city" loading="lazy" />
+      </div>
+      <div class="show-card-body">
+        <span class="card-index">SX—02</span>
+        <h3>Nocturne RS</h3>
+        <p>Built for the midnight run. Adaptive lighting, carbon everywhere, zero compromise.</p>
+        <ul class="spec-row">
+          <li><b>1103</b><span>cc</span></li>
+          <li><b>237</b><span>hp</span></li>
+          <li><b>2.9</b><span>0—100</span></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 3. RIDING GEAR ============ -->
+<section class="section gear" id="gear" data-animation="slide-left">
+  <div class="section-head align-right">
+    <span class="section-label">003 / Worn by Champions</span>
+    <h2 class="section-heading">Riding<br>Gear</h2>
+    <p class="section-body">Protection engineered like the bikes. CE-2 armour, kangaroo leather, aerospace composites — the emerald line, head to toe.</p>
+  </div>
+
+  <div class="gear-grid">
+    <article class="gear-item float" style="--d:0">
+      <div class="gear-media"><img src="casque.png" alt="MOTO X emerald full-face helmet" loading="lazy" /></div>
+      <div class="gear-label"><span class="card-index">G—01</span><h3>Aero Helmet</h3><p>Carbon shell · 1,290 g</p></div>
+    </article>
+    <article class="gear-item float" style="--d:1">
+      <div class="gear-media"><img src="dress.png" alt="MOTO X racing suit" loading="lazy" /></div>
+      <div class="gear-label"><span class="card-index">G—02</span><h3>Racing Suit</h3><p>Kangaroo leather · CE-2</p></div>
+    </article>
+    <article class="gear-item float" style="--d:2">
+      <div class="gear-media"><img src="gloves.png" alt="MOTO X racing gloves" loading="lazy" /></div>
+      <div class="gear-label"><span class="card-index">G—03</span><h3>Gauntlet Gloves</h3><p>Titanium knuckle</p></div>
+    </article>
+    <article class="gear-item float" style="--d:3">
+      <div class="gear-media"><img src="choses.png" alt="MOTO X racing boots" loading="lazy" /></div>
+      <div class="gear-label"><span class="card-index">G—04</span><h3>Track Boots</h3><p>Magnesium slider</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 4. PERFORMANCE PARTS ============ -->
+<section class="section parts" id="parts" data-animation="scale-up">
+  <div class="section-head align-left">
+    <span class="section-label">004 / Under the Skin</span>
+    <h2 class="section-heading">Performance<br>Parts</h2>
+    <p class="section-body">Genuine components, machined in-house. Hover to read the numbers behind the noise.</p>
+  </div>
+
+  <div class="parts-grid">
+    <article class="part-card" data-part>
+      <div class="part-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="10" y="16" width="20" height="16" rx="2"/><path d="M30 20h6l4 4v4h-10"/><path d="M14 16v-4h8v4M10 24H4M16 32v6M24 32v6"/>
+        </svg>
+      </div>
+      <div class="part-info">
+        <span class="card-index">P—01</span>
+        <h3>Engine</h3>
+        <p>Forged pistons, titanium rods, counter-rotating crank.</p>
+        <div class="part-stat"><span class="num" data-value="237" data-decimals="0">0</span><span class="unit">hp peak</span></div>
+      </div>
+    </article>
+
+    <article class="part-card" data-part>
+      <div class="part-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M8 30c8 0 8-12 16-12s10 6 18 6"/><circle cx="40" cy="24" r="4"/><path d="M8 30v4M12 30v4M16 30v4"/>
+        </svg>
+      </div>
+      <div class="part-info">
+        <span class="card-index">P—02</span>
+        <h3>Exhaust</h3>
+        <p>Full titanium system, hand-welded, akra-spec acoustics.</p>
+        <div class="part-stat"><span class="num" data-value="4.6" data-decimals="1">0</span><span class="unit">kg saved</span></div>
+      </div>
+    </article>
+
+    <article class="part-card" data-part>
+      <div class="part-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="5"/><path d="M24 10v6M24 32v6M10 24h6M32 24h6"/>
+        </svg>
+      </div>
+      <div class="part-info">
+        <span class="card-index">P—03</span>
+        <h3>Brakes</h3>
+        <p>Carbon-ceramic discs, monobloc calipers, radial master.</p>
+        <div class="part-stat"><span class="num" data-value="330" data-decimals="0">0</span><span class="unit">mm disc</span></div>
+      </div>
+    </article>
+
+    <article class="part-card" data-part>
+      <div class="part-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M18 8v6M18 14l12 6M18 14l-6 6M18 20v6M18 26l12 6M18 26l-6 6M18 32v8"/><circle cx="18" cy="8" r="2.5"/><circle cx="18" cy="40" r="2.5"/>
+        </svg>
+      </div>
+      <div class="part-info">
+        <span class="card-index">P—04</span>
+        <h3>Suspension</h3>
+        <p>Electronic semi-active Öhlins, 43 mm inverted forks.</p>
+        <div class="part-stat"><span class="num" data-value="125" data-decimals="0">0</span><span class="unit">mm travel</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ MARQUEE 2 ============ -->
+<div class="marquee-wrap reverse" id="marquee-2">
+  <div class="marquee-text outline">ENGINEERED IN EMERALD <span>·</span> ENGINEERED IN EMERALD <span>·</span> ENGINEERED IN EMERALD <span>·</span></div>
+</div>
+
+<!-- ============ 5. FEATURED BIKES ============ -->
+<section class="section bikes" id="bikes" data-animation="slide-right">
+  <div class="section-head align-left">
+    <span class="section-label">005 / The Collection</span>
+    <h2 class="section-heading">Featured<br>Bikes</h2>
+    <p class="section-body">Limited allocations. Each machine numbered, each delivery personal.</p>
+  </div>
+
+  <div class="bikes-grid">
+    <article class="bike-card feature tilt" data-tilt>
+      <img src="motorcycle1.png" alt="Emerald GT-R" loading="lazy" />
+      <div class="bike-overlay">
+        <div class="bike-meta"><span>SX—01</span><span class="bike-tag">Flagship</span></div>
+        <h3>Emerald GT-R</h3>
+        <div class="bike-foot"><span class="price">€ 38,400</span><span class="cta-link">Configure →</span></div>
+      </div>
+    </article>
+
+    <article class="bike-card tilt" data-tilt>
+      <img src="motorcycle2.png" alt="Nocturne RS" loading="lazy" />
+      <div class="bike-overlay">
+        <div class="bike-meta"><span>SX—02</span><span class="bike-tag">Night Series</span></div>
+        <h3>Nocturne RS</h3>
+        <div class="bike-foot"><span class="price">€ 44,900</span><span class="cta-link">Configure →</span></div>
+      </div>
+    </article>
+
+    <article class="bike-card placeholder">
+      <div class="bike-placeholder-inner">
+        <span class="card-index">SX—03</span>
+        <h3>Aurora <em>Concept</em></h3>
+        <p>Unveiling Q4. Register for early allocation.</p>
+        <span class="cta-link">Join the list →</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 6. WHY CHOOSE US ============ -->
+<section class="section why" id="why" data-animation="clip-reveal">
+  <div class="section-head align-right">
+    <span class="section-label">006 / The Standard</span>
+    <h2 class="section-heading">Why Ride<br>With Us</h2>
+  </div>
+
+  <div class="why-grid">
+    <article class="why-card">
+      <span class="why-num"><span class="num" data-value="100" data-decimals="0">0</span><i>%</i></span>
+      <h3>Premium Quality</h3>
+      <p>Every machine hand-finished and track-validated before it leaves the floor.</p>
+    </article>
+    <article class="why-card">
+      <span class="why-num"><span class="num" data-value="100" data-decimals="0">0</span><i>%</i></span>
+      <h3>Genuine Parts</h3>
+      <p>OEM-grade components only. Full traceability, lifetime authenticity.</p>
+    </article>
+    <article class="why-card">
+      <span class="why-num"><span class="num" data-value="48" data-decimals="0">0</span><i>h</i></span>
+      <h3>Fast Delivery</h3>
+      <p>Parts dispatched within 48 hours across the continent, white-glove.</p>
+    </article>
+    <article class="why-card">
+      <span class="why-num"><span class="num" data-value="24" data-decimals="0">0</span><i>/7</i></span>
+      <h3>Expert Support</h3>
+      <p>Factory-trained technicians on call, every hour of every day.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 7. CTA ============ -->
+<section class="section cta-section" id="cta">
+  <div class="cta-bg" style="background-image:url('motorcycle2.png')"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <span class="section-label cream">007 / The Invitation</span>
+    <h2 class="cta-heading">Your line<br>starts here.</h2>
+    <p class="cta-body">Book a private test ride at the MOTO X atelier. No pressure. Just the road, and the machine that was built for it.</p>
+    <a href="mailto:ride@motox.performance" class="btn-magnetic cta-button"><span>Book a Test Ride</span><i class="arrow">→</i></a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-brand">MOTO<em>X</em><span>Performance</span></div>
+  <div class="footer-cols">
+    <a href="#showcase">Showcase</a>
+    <a href="#gear">Gear</a>
+    <a href="#parts">Parts</a>
+    <a href="#bikes">Bikes</a>
+  </div>
+  <p class="footer-legal">© 2026 MOTO X Performance — Ride Beyond Limits.</p>
+</footer>
+
+</main>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
