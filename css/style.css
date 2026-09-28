@@ -428,24 +428,24 @@ html.lenis,html.lenis body{height:auto}
 .page-about .site-header{mix-blend-mode:normal}
 .page-about .brand em{color:transparent;-webkit-text-stroke:1px var(--cream)}
 .about-hero{position:relative;z-index:5;overflow:hidden;min-height:100dvh;
-  display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr);align-items:center;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;
   gap:clamp(1rem,3vw,3rem);
   padding:clamp(7rem,14vh,9rem) 0 clamp(3rem,8vh,5rem) clamp(1.2rem,6vw,7rem);
   background:#010d09}
 .about-hero::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(160deg,#0d2c1f 0%,#08201a 100%);
   clip-path:polygon(0 0,86% 0,0 24%)}
-.about-copy{position:relative;max-width:34rem;animation:about-in .9s var(--ease) both}
+.about-copy{position:relative;max-width:42rem;animation:about-in .9s var(--ease) both}
 .about-crumb{display:flex;align-items:center;gap:.6rem;margin-bottom:1.6rem;
-  font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  font-size:.9rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .about-crumb a:hover{color:var(--cream)}
 .about-crumb span[aria-hidden]{color:var(--gold)}
 .about-crumb [aria-current]{color:var(--cream)}
 .about-title{font-family:var(--font-display);font-weight:500;color:var(--gold);
-  font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.1;letter-spacing:-.01em}
+  font-size:clamp(2.5rem,4.6vw,4.4rem);line-height:1.08;letter-spacing:-.01em}
 .about-subtitle{font-family:var(--font-display);font-weight:400;color:var(--cream);
-  font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.1;letter-spacing:-.01em;margin-top:.2rem}
-.about-body{margin-top:2.4rem;max-width:46ch;color:#c9d6cf;font-size:.98rem;line-height:1.85}
+  font-size:clamp(2.5rem,4.6vw,4.4rem);line-height:1.08;letter-spacing:-.01em;margin-top:.2rem}
+.about-body{margin-top:2.4rem;max-width:44ch;color:#d3dfd8;font-size:clamp(1.12rem,1.4vw,1.35rem);line-height:1.75}
 .about-media{position:relative;margin:0;animation:about-bike-in 1.2s var(--ease) .15s both}
 .about-media img{width:112%;max-width:none;height:auto;
   -webkit-mask-image:radial-gradient(ellipse 58% 60% at 50% 50%,#000 68%,transparent 100%);
