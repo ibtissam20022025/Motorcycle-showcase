@@ -263,7 +263,7 @@ function initSections() {
 
     const items = section.querySelectorAll(
       ".section-label, .section-body, .show-card, .gear-item, .part-card, .bike-card, .why-card, " +
-      ".story-media, .story-text > p, .timeline-item, .value-card, .team-card"
+      ".story-media, .story-text > p, .value-card"
     );
 
     const fromVars = {
