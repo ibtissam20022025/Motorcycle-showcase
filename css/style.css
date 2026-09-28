@@ -424,42 +424,21 @@ html.lenis,html.lenis body{height:auto}
    ============================================================ */
 .nav a.active::after{width:100%}
 
-/* hero with static backdrop instead of the frame-scrub canvas */
-.page-hero{overflow:hidden;min-height:92dvh;padding-top:clamp(6.5rem,12vh,9rem);padding-bottom:4rem}
-.page-hero-bg{position:absolute;inset:0;z-index:-2;background-size:cover;
-  background-position:center 40%;will-change:transform}
-.page-hero-overlay{position:absolute;inset:0;z-index:-1;
-  background:
-    linear-gradient(to right,rgba(2,17,12,.96) 0%,rgba(2,17,12,.7) 45%,rgba(2,17,12,.35) 100%),
-    linear-gradient(to bottom,rgba(2,17,12,.5) 0%,transparent 30%,transparent 70%,var(--bg) 100%)}
-.page-hero .hero-content{position:relative}
-
-/* story */
-.story-grid{max-width:var(--maxw);margin:0 auto;
-  display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,5rem);align-items:center}
-.story-media{position:relative;border-radius:24px;overflow:hidden;
-  border:1px solid var(--line);aspect-ratio:4/3;background:var(--bg-2)}
-.story-media img{width:100%;height:100%;object-fit:cover}
-.story-caption{position:absolute;left:1.2rem;bottom:1.2rem;font-size:.68rem;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--cream);
-  background:rgba(2,17,12,.7);backdrop-filter:blur(8px);
-  border:1px solid var(--line);border-radius:100px;padding:.45em 1em}
-.story-text p{color:var(--muted);font-size:1.05rem;max-width:48ch}
-.story-text p + p{margin-top:1.2rem}
-.story-text .story-lead{font-family:var(--font-display);font-weight:500;
-  font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.25;color:var(--cream)}
-
-
-/* values */
-.values-grid{max-width:var(--maxw);margin:0 auto;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.value-card{padding:2.2rem 2rem 2.4rem;border:1px solid var(--line);border-radius:20px;
-  background:linear-gradient(160deg,var(--secondary-2),var(--bg-2));
-  transition:transform .5s var(--ease),border-color .5s var(--ease)}
-.value-card:hover{transform:translateY(-6px);border-color:rgba(243,235,214,.32)}
-.value-card h3{font-family:var(--font-display);font-weight:600;font-size:1.6rem;
-  line-height:1.1;margin:.8rem 0 .7rem}
-.value-card p{color:var(--muted);font-size:.95rem}
+/* plain text article */
+.about-text{position:relative;z-index:5;max-width:68ch;margin:0 auto;
+  padding:clamp(8rem,16vh,11rem) clamp(1.2rem,5vw,2rem) clamp(5rem,10vw,8rem)}
+.about-text h1{font-family:var(--font-display);font-weight:600;
+  font-size:clamp(2.4rem,6vw,4rem);line-height:1;letter-spacing:-.02em;margin-bottom:2rem}
+.about-text h2{font-family:var(--font-display);font-weight:500;
+  font-size:clamp(1.4rem,3vw,1.8rem);line-height:1.2;margin:3rem 0 1rem}
+.about-text p,.about-text li{color:#d9e6df;font-size:1.08rem;line-height:1.75}
+.about-text p + p{margin-top:1.2rem}
+.about-text .about-lead{font-size:clamp(1.2rem,2.2vw,1.45rem);line-height:1.5;color:var(--cream)}
+.about-text ul{padding-left:1.2rem}
+.about-text li + li{margin-top:.8rem}
+.about-text strong{color:var(--cream);font-weight:700}
+.about-text a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.about-text a:hover{color:var(--cream)}
 
 
 /* ============================================================
@@ -471,8 +450,6 @@ html.lenis,html.lenis body{height:auto}
   .gear-grid{grid-template-columns:repeat(2,1fr)}
   .bikes-grid{grid-template-columns:1fr 1fr}
   .bike-card.feature{grid-row:span 1;grid-column:span 2}
-  .story-grid{grid-template-columns:1fr}
-  .values-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:768px){
   .nav,.header-cta{display:none}
@@ -493,8 +470,6 @@ html.lenis,html.lenis body{height:auto}
   .section-head{margin-bottom:2.5rem}
   .hero-caption{max-width:none;top:auto;bottom:14vh;transform:translateY(20px)}
   .hero-caption.align-left,.hero-caption.align-right{left:1.4rem;right:1.4rem;text-align:left}
-  .values-grid{grid-template-columns:1fr}
-  .page-hero{min-height:88dvh}
 }
 @media (max-width:420px){
   .gear-grid{grid-template-columns:1fr}

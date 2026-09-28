@@ -198,6 +198,7 @@ function initHeroScrub() {
    HERO TEXT — split reveal + parallax
    ============================================================ */
 function initHeroText() {
+  if (!document.querySelector(".hero-heading")) return;
   const lines = gsap.utils.toArray(".hero-heading .line");
   const tl = gsap.timeline({ delay: 0.15 });
 
@@ -216,14 +217,6 @@ function initHeroText() {
   tl.from(".hero-label", { y: 20, opacity: 0, duration: 0.7, ease: "power2.out" }, 0)
     .from(".hero-tagline", { y: 24, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
     .from(".hero-cta", { y: 24, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.55");
-
-  // about page: slow push-in on the hero backdrop
-  if (!REDUCED && document.querySelector(".page-hero-bg")) {
-    gsap.fromTo(".page-hero-bg", { scale: 1.18 }, {
-      scale: 1, yPercent: 12, ease: "none",
-      scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true },
-    });
-  }
 
   // parallax the hero content as it scrolls away
   if (!REDUCED) {
@@ -262,8 +255,7 @@ function initSections() {
     }
 
     const items = section.querySelectorAll(
-      ".section-label, .section-body, .show-card, .gear-item, .part-card, .bike-card, .why-card, " +
-      ".story-media, .story-text > p, .value-card"
+      ".section-label, .section-body, .show-card, .gear-item, .part-card, .bike-card, .why-card"
     );
 
     const fromVars = {
