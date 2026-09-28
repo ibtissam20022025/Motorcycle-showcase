@@ -449,20 +449,6 @@ html.lenis,html.lenis body{height:auto}
 .story-text .story-lead{font-family:var(--font-display);font-weight:500;
   font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.25;color:var(--cream)}
 
-/* timeline */
-.timeline-list{max-width:var(--maxw);margin:0 auto;list-style:none;
-  display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
-.timeline-list::before{content:'';position:absolute;left:0;right:0;top:.55rem;
-  height:1px;background:var(--line)}
-.timeline-item{position:relative;padding:2.4rem 1.4rem 0 0}
-.timeline-item::before{content:'';position:absolute;top:.2rem;left:0;
-  width:.75rem;height:.75rem;border-radius:50%;background:var(--bg);
-  border:1px solid var(--gold);box-shadow:0 0 16px var(--emerald-glow)}
-.timeline-item:last-child::before{background:var(--gold)}
-.timeline-year{font-family:var(--font-display);font-weight:600;
-  font-size:clamp(2rem,3.4vw,3rem);line-height:1;color:var(--cream)}
-.timeline-item h3{font-family:var(--font-display);font-weight:500;font-size:1.2rem;margin:.8rem 0 .4rem}
-.timeline-item p{color:var(--muted);font-size:.9rem;max-width:28ch}
 
 /* values */
 .values-grid{max-width:var(--maxw);margin:0 auto;
@@ -475,18 +461,6 @@ html.lenis,html.lenis body{height:auto}
   line-height:1.1;margin:.8rem 0 .7rem}
 .value-card p{color:var(--muted);font-size:.95rem}
 
-/* team */
-.team::before{left:auto;right:-10%}
-.team-grid{max-width:var(--maxw);margin:0 auto;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.team-card{padding:2rem;border-top:1px solid var(--line)}
-.team-avatar{width:84px;height:84px;border-radius:50%;margin-bottom:1.4rem;
-  display:grid;place-items:center;font-family:var(--font-display);font-weight:600;
-  font-size:1.5rem;letter-spacing:.04em;color:var(--cream);
-  background:radial-gradient(circle at 35% 30%,var(--secondary),var(--bg-2));
-  border:1px solid var(--line)}
-.team-card h3{font-family:var(--font-display);font-weight:600;font-size:1.5rem;margin:.4rem 0 .5rem}
-.team-card p{color:var(--muted);font-size:.92rem;max-width:34ch}
 
 /* ============================================================
    RESPONSIVE
@@ -498,11 +472,7 @@ html.lenis,html.lenis body{height:auto}
   .bikes-grid{grid-template-columns:1fr 1fr}
   .bike-card.feature{grid-row:span 1;grid-column:span 2}
   .story-grid{grid-template-columns:1fr}
-  .timeline-list{grid-template-columns:1fr;padding-left:1.8rem}
-  .timeline-list::before{left:.37rem;right:auto;top:0;bottom:0;width:1px;height:auto}
-  .timeline-item{padding:0 0 2.2rem 0}
-  .timeline-item::before{left:-1.8rem;top:.6rem}
-  .values-grid,.team-grid{grid-template-columns:1fr 1fr}
+  .values-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:768px){
   .nav,.header-cta{display:none}
@@ -523,8 +493,7 @@ html.lenis,html.lenis body{height:auto}
   .section-head{margin-bottom:2.5rem}
   .hero-caption{max-width:none;top:auto;bottom:14vh;transform:translateY(20px)}
   .hero-caption.align-left,.hero-caption.align-right{left:1.4rem;right:1.4rem;text-align:left}
-  .values-grid,.team-grid{grid-template-columns:1fr}
-  .team-card{padding:1.6rem .2rem}
+  .values-grid{grid-template-columns:1fr}
   .page-hero{min-height:88dvh}
 }
 @media (max-width:420px){
