@@ -255,7 +255,7 @@ function initSections() {
     }
 
     const items = section.querySelectorAll(
-      ".section-label, .section-body, .show-card, .gear-item, .part-card, .bike-card, .why-card"
+      ".section-label, .section-body, .show-card, .gear-item, .part-card, .bike-card"
     );
 
     const fromVars = {

@@ -228,7 +228,7 @@ html.lenis,html.lenis body{height:auto}
   filter:blur(40px);pointer-events:none;z-index:-1;opacity:.7;
   top:-10%;left:-10%;
 }
-.gear::before,.why::before{left:auto;right:-10%}
+.gear::before{left:auto;right:-10%}
 
 /* ============================================================
    2. SHOWCASE  — 3D tilt cards
@@ -355,20 +355,7 @@ html.lenis,html.lenis body{height:auto}
 .bike-placeholder-inner p{color:var(--muted);margin-bottom:1.2rem;font-size:.92rem}
 
 /* ============================================================
-   6. WHY CHOOSE US
-   ============================================================ */
-.why-grid{max-width:var(--maxw);margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.why-card{padding:2.2rem 1.6rem;border-left:1px solid var(--line)}
-.why-card:first-child{border-left:0}
-.why-num{font-family:var(--font-display);font-weight:600;
-  font-size:clamp(2.6rem,4.5vw,4rem);color:var(--cream);display:flex;align-items:baseline}
-.why-num i{font-style:normal;font-size:.45em;color:var(--gold);margin-left:.1em}
-.why-card h3{font-family:var(--font-display);font-weight:500;font-size:1.25rem;margin:.7rem 0 .5rem}
-.why-card p{color:var(--muted);font-size:.9rem}
-
-/* ============================================================
-   7. CTA
+   6. CTA
    ============================================================ */
 .cta-section{
   position:relative;z-index:5;min-height:100dvh;display:grid;place-items:center;
@@ -507,9 +494,6 @@ html.lenis,html.lenis body{height:auto}
   .gear-item:nth-child(even){margin-top:1.5rem}
   .bikes-grid{grid-template-columns:1fr}
   .bike-card.feature{grid-column:span 1}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .why-card{border-left:0;border-top:1px solid var(--line);padding:1.6rem .4rem}
-  .why-card:first-child,.why-card:nth-child(2){border-top:0}
   .align-right{align-items:flex-start;text-align:left}
   .align-right .section-body{margin-left:0}
   .section-head{margin-bottom:2.5rem}
@@ -520,8 +504,6 @@ html.lenis,html.lenis body{height:auto}
   .footer-main{grid-template-columns:1fr}
   .gear-grid{grid-template-columns:1fr}
   .gear-item:nth-child(even){margin-top:0}
-  .why-grid{grid-template-columns:1fr}
-  .why-card:nth-child(2){border-top:1px solid var(--line)}
 }
 
 /* ---------- REDUCED MOTION ---------- */
