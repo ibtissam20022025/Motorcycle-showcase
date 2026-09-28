@@ -16,7 +16,8 @@ const FRAME_SPEED = 2.0;           // product anim finishes ~50% of hero scroll
 const IMAGE_SCALE = 0.9;           // padded-cover sweet spot
 
 const canvas = document.getElementById("hero-canvas");
-const ctx = canvas.getContext("2d", { alpha: false });
+const HAS_CANVAS = !!canvas;       // only the home page has the frame-scrub hero
+const ctx = HAS_CANVAS ? canvas.getContext("2d", { alpha: false }) : null;
 const canvasWrap = document.getElementById("canvas-wrap");
 const frames = new Array(FRAME_COUNT);
 let currentFrame = 0;
@@ -27,6 +28,7 @@ let dpr = Math.min(window.devicePixelRatio || 1, 2);
    CANVAS RENDER — padded cover mode
    ============================================================ */
 function resizeCanvas() {
+  if (!HAS_CANVAS) return;
   dpr = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = window.innerWidth * dpr;
   canvas.height = window.innerHeight * dpr;
@@ -63,8 +65,8 @@ function loadFrame(i) {
       frames[i] = img;
       loaded++;
       const pct = Math.round((loaded / FRAME_COUNT) * 100);
-      barEl.style.width = pct + "%";
-      pctEl.textContent = pct;
+      if (barEl) barEl.style.width = pct + "%";
+      if (pctEl) pctEl.textContent = pct;
       if (i === 0) resizeCanvas();
       resolve();
     };
@@ -86,11 +88,13 @@ async function preload() {
    INIT
    ============================================================ */
 async function init() {
-  resizeCanvas();
-  await preload();
+  if (HAS_CANVAS) {
+    resizeCanvas();
+    await preload();
+  }
   revealLoader();
   initLenis();
-  initHeroScrub();
+  if (HAS_CANVAS) initHeroScrub();
   initHeroText();
   initHeader();
   initSections();
@@ -103,6 +107,7 @@ async function init() {
 }
 
 function revealLoader() {
+  if (!loaderEl) return;
   gsap.to(loaderEl, {
     opacity: 0, duration: 0.8, ease: "power2.inOut",
     onComplete: () => { loaderEl.classList.add("done"); }
@@ -212,6 +217,14 @@ function initHeroText() {
     .from(".hero-tagline", { y: 24, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
     .from(".hero-cta", { y: 24, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.55");
 
+  // about page: slow push-in on the hero backdrop
+  if (!REDUCED && document.querySelector(".page-hero-bg")) {
+    gsap.fromTo(".page-hero-bg", { scale: 1.18 }, {
+      scale: 1, yPercent: 12, ease: "none",
+      scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true },
+    });
+  }
+
   // parallax the hero content as it scrolls away
   if (!REDUCED) {
     gsap.to(".hero-content", {
@@ -249,7 +262,8 @@ function initSections() {
     }
 
     const items = section.querySelectorAll(
-      ".section-label, .section-body, .show-card, .gear-item, .part-card, .bike-card, .why-card"
+      ".section-label, .section-body, .show-card, .gear-item, .part-card, .bike-card, .why-card, " +
+      ".story-media, .story-text > p, .timeline-item, .value-card, .team-card"
     );
 
     const fromVars = {
