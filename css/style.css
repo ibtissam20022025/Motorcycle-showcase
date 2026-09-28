@@ -409,10 +409,14 @@ html.lenis,html.lenis body{height:auto}
 .footer-brand span{font-family:var(--font-body);font-size:.55rem;letter-spacing:.35em;
   text-transform:uppercase;color:var(--muted)}
 .footer-cols{display:flex;flex-wrap:wrap;gap:.8rem 1.8rem}
-.footer-cols a{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
-.footer-cols a:hover{color:var(--cream)}
-.footer-legal{width:100%;font-size:.74rem;color:var(--muted);
-  border-top:1px solid var(--line);padding-top:1.4rem}
+.footer-cols a,.footer-top{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);
+  transition:color .3s var(--ease)}
+.footer-cols a:hover,.footer-top:hover,.footer-brand:hover span{color:var(--cream)}
+.footer-cols a[aria-current="page"]{color:var(--cream)}
+.footer-bottom{width:100%;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;
+  justify-content:space-between;border-top:1px solid var(--line);padding-top:1.4rem}
+.footer-legal{font-size:.74rem;color:var(--muted)}
+.footer-top{font-size:.7rem}
 
 /* ============================================================
    ANIMATION INITIAL STATES (set by JS, fallback safe)
@@ -471,6 +475,7 @@ html.lenis,html.lenis body{height:auto}
   .bike-card.feature{grid-row:span 1;grid-column:span 2}
 }
 @media (max-width:768px){
+  .footer-cols{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:1rem 2.2rem}
   .nav,.header-cta{display:none}
   .nav-toggle{display:flex}
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
