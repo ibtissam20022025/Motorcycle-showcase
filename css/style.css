@@ -408,7 +408,7 @@ html.lenis,html.lenis body{height:auto}
 .footer-brand em{font-style:normal;color:transparent;-webkit-text-stroke:1px var(--cream)}
 .footer-brand span{font-family:var(--font-body);font-size:.55rem;letter-spacing:.35em;
   text-transform:uppercase;color:var(--muted)}
-.footer-cols{display:flex;gap:1.8rem}
+.footer-cols{display:flex;flex-wrap:wrap;gap:.8rem 1.8rem}
 .footer-cols a{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
 .footer-cols a:hover{color:var(--cream)}
 .footer-legal{width:100%;font-size:.74rem;color:var(--muted);
@@ -424,27 +424,46 @@ html.lenis,html.lenis body{height:auto}
    ============================================================ */
 .nav a.active::after{width:100%}
 
-/* plain text article */
-.about-text{position:relative;z-index:5;max-width:68ch;margin:0 auto;
-  padding:clamp(8rem,16vh,11rem) clamp(1.2rem,5vw,2rem) clamp(5rem,10vw,8rem)}
-.about-text h1{font-family:var(--font-display);font-weight:600;
-  font-size:clamp(2.4rem,6vw,4rem);line-height:1;letter-spacing:-.02em;margin-bottom:2rem}
-.about-text h2{font-family:var(--font-display);font-weight:500;
-  font-size:clamp(1.4rem,3vw,1.8rem);line-height:1.2;margin:3rem 0 1rem}
-.about-text p,.about-text li{color:#d9e6df;font-size:1.08rem;line-height:1.75}
-.about-text p + p{margin-top:1.2rem}
-.about-text .about-lead{font-size:clamp(1.2rem,2.2vw,1.45rem);line-height:1.5;color:var(--cream)}
-.about-text ul{padding-left:1.2rem}
-.about-text li + li{margin-top:.8rem}
-.about-text strong{color:var(--cream);font-weight:700}
-.about-text a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
-.about-text a:hover{color:var(--cream)}
+/* text + picture layout: copy on the left, bike on the right, diagonal band */
+.page-about .site-header{mix-blend-mode:normal}
+.page-about .brand em{color:transparent;-webkit-text-stroke:1px var(--cream)}
+.about-hero{position:relative;z-index:5;overflow:hidden;min-height:100dvh;
+  display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr);align-items:center;
+  gap:clamp(1rem,3vw,3rem);
+  padding:clamp(7rem,14vh,9rem) 0 clamp(3rem,8vh,5rem) clamp(1.2rem,6vw,7rem);
+  background:#010d09}
+.about-hero::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(160deg,#0d2c1f 0%,#08201a 100%);
+  clip-path:polygon(0 0,86% 0,0 24%)}
+.about-copy{position:relative;max-width:34rem;animation:about-in .9s var(--ease) both}
+.about-crumb{display:flex;align-items:center;gap:.6rem;margin-bottom:1.6rem;
+  font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.about-crumb a:hover{color:var(--cream)}
+.about-crumb span[aria-hidden]{color:var(--gold)}
+.about-crumb [aria-current]{color:var(--cream)}
+.about-title{font-family:var(--font-display);font-weight:500;color:var(--gold);
+  font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.1;letter-spacing:-.01em}
+.about-subtitle{font-family:var(--font-display);font-weight:400;color:var(--cream);
+  font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.1;letter-spacing:-.01em;margin-top:.2rem}
+.about-body{margin-top:2.4rem;max-width:46ch;color:#c9d6cf;font-size:.98rem;line-height:1.85}
+.about-media{position:relative;margin:0;animation:about-bike-in 1.2s var(--ease) .15s both}
+.about-media img{width:112%;max-width:none;height:auto;
+  -webkit-mask-image:radial-gradient(ellipse 58% 60% at 50% 50%,#000 68%,transparent 100%);
+          mask-image:radial-gradient(ellipse 58% 60% at 50% 50%,#000 68%,transparent 100%)}
+@keyframes about-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes about-bike-in{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:none}}
 
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width:1024px){
+  .about-hero{grid-template-columns:1fr;min-height:0;gap:1rem;
+    padding:clamp(7rem,14vh,9rem) 0 3rem}
+  .about-hero::before{clip-path:polygon(0 0,100% 0,0 15%)}
+  .about-copy{padding:0 clamp(1.2rem,6vw,3rem)}
+  .about-media{margin-top:1rem}
+  .about-media img{width:100%}
   .showcase-grid{grid-template-columns:1fr}
   .showcase-grid .show-card:nth-child(2){margin-top:0}
   .gear-grid{grid-template-columns:repeat(2,1fr)}
@@ -480,6 +499,7 @@ html.lenis,html.lenis body{height:auto}
 
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion:reduce){
+  .about-copy,.about-media{animation:none}
   .gear-media img{animation:none}
   *{transition-duration:.001ms!important}
 }
